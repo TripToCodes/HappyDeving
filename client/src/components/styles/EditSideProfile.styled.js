@@ -103,7 +103,7 @@ const EditSideProfile = () => {
       <Container>
         <Profile>
           <ProfileImage>
-            <img src={previewImg ? previewImg : user.image} />
+            <img referrerpolicy="no-referrer" src={previewImg ? previewImg : user.image} />
             <ProfilePrieview
               onClick={() => {
                 fileInput.current.click();

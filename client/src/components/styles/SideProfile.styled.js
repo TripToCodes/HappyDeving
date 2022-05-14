@@ -52,7 +52,7 @@ const SideProfile = () => {
       <Container>
         <Profile>
           <ProfileImage>
-            <img src={user.image} />
+            <img referrerpolicy="no-referrer" src={user.image} />
           </ProfileImage>
           <form>
             <input />

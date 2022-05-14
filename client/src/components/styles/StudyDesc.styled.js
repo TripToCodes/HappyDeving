@@ -345,7 +345,7 @@ const StudyDesc = () => {
           </TitleBar>
           <Host>
             <Wrap>
-              <img className="profile" src={data?.image} />
+              <img referrerpolicy="no-referrer" className="profile" src={data?.image} />
               <Text>{data?.username}</Text>
             </Wrap>
           </Host>

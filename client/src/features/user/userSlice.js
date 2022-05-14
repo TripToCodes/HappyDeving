@@ -21,7 +21,7 @@ const initialState = {
 };
 
 export const signup = createAsyncThunk("user/signup", async (signupData, thunkAPI) => {
-  console.log(signupData);
+  // console.log(signupData);
   try {
     return await signupApi(signupData).then((res) => {
       return res.data;
@@ -35,7 +35,7 @@ export const signin = createAsyncThunk("user/signin", async (signinData, thunkAP
   try {
     return await signinApi(signinData).then((res) => {
       if (res) {
-        console.log("signin res.data: ", res.data);
+        // console.log("signin res.data: ", res.data);
         localStorage.setItem("user", JSON.stringify(res.data.data.userInfo));
         localStorage.setItem("token", JSON.stringify(res.data.newAccessToken));
         axios.defaults.headers = { "Content-Type": "application/json", ...authHeader() };
@@ -83,10 +83,9 @@ export const editProfile = createAsyncThunk(
 export const editProfileImage = createAsyncThunk(
   "user/editProfileImage",
   async ({ id, formData }, thunkAPI) => {
-    console.log("실행은되나", { id, formData });
     try {
       return await editProfileImageApi(id, formData).then((res) => {
-        console.log("axios.patch 후 editProfileImage res.data ::", res.data);
+        // console.log("axios.patch 후 editProfileImage res.data ::", res.data);
         return res.data;
       });
     } catch (error) {
@@ -188,7 +187,7 @@ export const userSlice = createSlice({
         state.isLoading = false;
         state.isSuccess = true;
         state.user.image = action.payload.data.userInfo.image;
-        console.log("action.payload.data.userInfo.image", action.payload.data.userInfo.image);
+        // console.log("action.payload.data.userInfo.image", action.payload.data.userInfo.image);
       })
       .addCase(editProfileImage.rejected, (state, action) => {
         state.isLoading = false;
